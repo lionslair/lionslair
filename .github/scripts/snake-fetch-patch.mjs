@@ -11,8 +11,23 @@ const GRAPHQL_URL = "https://api.github.com/graphql";
 
 const TOTAL_DAYS = 371; // 53 weeks, matches the grid snk renders
 const MAX_SPLIT_DEPTH = 12;
+const MAX_RATE_LIMIT_RETRIES = 5;
+const SPLIT_DELAY_MS = 1500; // pace requests below a split so GitHub's abuse/secondary limit doesn't trip
 
-async function fetchChunk(login, token, from, to) {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// thrown for the one error snk's queries are actually meant to trigger
+// splitting for; everything else (5xx, secondary rate limits, malformed
+// bodies, network blips) is treated as transient and retried with backoff
+class ResourceLimitError extends Error {}
+class TransientError extends Error {
+  constructor(message, retryAfterSeconds) {
+    super(message);
+    this.retryAfterSeconds = retryAfterSeconds;
+  }
+}
+
+async function rawFetchChunk(login, token, from, to) {
   const query = `
     query ($login: String!, $from: DateTime!, $to: DateTime!) {
       user(login: $login) {
@@ -31,31 +46,74 @@ async function fetchChunk(login, token, from, to) {
       }
     }
   `;
-  const res = await originalFetch(GRAPHQL_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `bearer ${token}`,
-      "Content-Type": "application/json",
-      "User-Agent": "me@platane.me",
-    },
-    body: JSON.stringify({
-      query,
-      variables: { login, from: from.toISOString(), to: to.toISOString() },
-    }),
-  });
-  if (!res.ok) throw new Error(await res.text().catch(() => res.statusText));
-  const { data, errors } = await res.json();
-  if (errors?.[0]) throw new Error(errors[0].message);
+  let res;
+  try {
+    res = await originalFetch(GRAPHQL_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `bearer ${token}`,
+        "Content-Type": "application/json",
+        "User-Agent": "me@platane.me",
+      },
+      body: JSON.stringify({
+        query,
+        variables: { login, from: from.toISOString(), to: to.toISOString() },
+      }),
+    });
+  } catch (networkErr) {
+    throw new TransientError(String(networkErr));
+  }
+
+  const retryAfterHeader = Number(res.headers.get("retry-after"));
+  const retryAfterSeconds = Number.isFinite(retryAfterHeader) && retryAfterHeader > 0 ? retryAfterHeader : 20;
+
+  const text = await res.text();
+  if (!res.ok) throw new TransientError(text || res.statusText, retryAfterSeconds);
+
+  let json;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    // GitHub sometimes serves an HTML error page (e.g. the "Unicorn" 5xx
+    // page) with a 200-ish status during backend hiccups
+    throw new TransientError(`non-JSON response: ${text.slice(0, 200)}`, retryAfterSeconds);
+  }
+
+  const { data, errors } = json;
+  if (errors?.[0]) {
+    if (/Resource limits/i.test(errors[0].message)) throw new ResourceLimitError(errors[0].message);
+    throw new TransientError(errors[0].message, retryAfterSeconds);
+  }
   return data.user.contributionsCollection.contributionCalendar.weeks;
 }
 
+async function fetchChunk(login, token, from, to, retriesLeft = MAX_RATE_LIMIT_RETRIES) {
+  try {
+    return await rawFetchChunk(login, token, from, to);
+  } catch (err) {
+    if (err instanceof TransientError && retriesLeft > 0) {
+      console.error(
+        `🩹 patch: transient failure (${err.message.slice(0, 150)}), waiting ${err.retryAfterSeconds}s before retry (${retriesLeft} retries left)`,
+      );
+      await sleep(err.retryAfterSeconds * 1000);
+      return fetchChunk(login, token, from, to, retriesLeft - 1);
+    }
+    throw err;
+  }
+}
+
 async function fetchRangeInto(dayMap, login, token, from, to, depth = 0) {
+  // space out requests once we're inside a split, since consecutive
+  // rejected "resource limits exceeded" queries still cost GitHub compute
+  // and can otherwise trip the secondary/abuse rate limit
+  if (depth > 0) await sleep(SPLIT_DELAY_MS);
+
   try {
     const weeks = await fetchChunk(login, token, from, to);
     for (const w of weeks) for (const d of w.contributionDays) dayMap.set(d.date, d);
   } catch (err) {
     const spanDays = (to.getTime() - from.getTime()) / 86400000;
-    if (!/Resource limits/i.test(String(err.message)) || spanDays < 2 || depth > MAX_SPLIT_DEPTH) {
+    if (!(err instanceof ResourceLimitError) || spanDays < 2 || depth > MAX_SPLIT_DEPTH) {
       throw err;
     }
     const mid = new Date(from.getTime() + Math.floor((to.getTime() - from.getTime()) / 2));
