@@ -91,11 +91,11 @@ naming any repo.
 
 ### 🔭 Recent activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
-2. ℹ️ Assigned PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
-3. ℹ️ Labeled PR [#31](https://github.com/DCODE-GROUP/form-builder/pull/31) in [DCODE-GROUP/form-builder](https://github.com/DCODE-GROUP/form-builder)
-4. 🗣 Commented on [#93](https://github.com/DCODE-GROUP/laravel-activity-log/pull/93#issuecomment-4861313105) in [DCODE-GROUP/laravel-activity-log](https://github.com/DCODE-GROUP/laravel-activity-log)
-5. 🚀 Published release [3.0.1](https://github.com/DCODE-GROUP/laravel-activity-log/releases/tag/3.0.1) in [DCODE-GROUP/laravel-activity-log](https://github.com/DCODE-GROUP/laravel-activity-log)
+1. 🗣 Commented on [#94](https://github.com/DCODE-GROUP/laravel-activity-log/pull/94#issuecomment-5029317719) in [DCODE-GROUP/laravel-activity-log](https://github.com/DCODE-GROUP/laravel-activity-log)
+2. 💪 Opened PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
+3. ℹ️ Assigned PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
+4. ℹ️ Labeled PR [#31](https://github.com/DCODE-GROUP/form-builder/pull/31) in [DCODE-GROUP/form-builder](https://github.com/DCODE-GROUP/form-builder)
+5. 🗣 Commented on [#93](https://github.com/DCODE-GROUP/laravel-activity-log/pull/93#issuecomment-4861313105) in [DCODE-GROUP/laravel-activity-log](https://github.com/DCODE-GROUP/laravel-activity-log)
 <!--END_SECTION:activity-->
 
 ---
