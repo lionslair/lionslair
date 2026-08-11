@@ -91,11 +91,11 @@ naming any repo.
 
 ### 🔭 Recent activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
-2. 🎉 Merged PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
-3. ℹ️ Assigned PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
-4. 💪 Opened PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
-5. 🚀 Published release [3.0.8](https://github.com/DCODE-GROUP/fileman/releases/tag/3.0.8) in [DCODE-GROUP/fileman](https://github.com/DCODE-GROUP/fileman)
+1. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
+2. 🎉 Merged PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
+3. 🎉 Merged PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
+4. ℹ️ Assigned PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
+5. 💪 Opened PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
 <!--END_SECTION:activity-->
 
 ---
