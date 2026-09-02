@@ -91,8 +91,8 @@ naming any repo.
 
 ### 🔭 Recent activity
 <!--START_SECTION:activity-->
-1. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
-2. 🎉 Merged PR [#5](https://github.com/lionslair/laradock-local/pull/5) in [lionslair/laradock-local](https://github.com/lionslair/laradock-local)
+1. 🗣 Commented on [#107649](https://github.com/home-assistant/core/issues/107649#issuecomment-5510221789) in [home-assistant/core](https://github.com/home-assistant/core)
+2. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
 3. 🎉 Merged PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
 4. ℹ️ Assigned PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
 5. 💪 Opened PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
