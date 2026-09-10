@@ -91,10 +91,10 @@ naming any repo.
 
 ### 🔭 Recent activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#107649](https://github.com/home-assistant/core/issues/107649#issuecomment-5510221789) in [home-assistant/core](https://github.com/home-assistant/core)
-2. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
-3. 🎉 Merged PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
-4. ℹ️ Assigned PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
+1. 🗣 Commented on [#2398](https://github.com/CodeWithCJ/SparkyFitness/issues/2398#issuecomment-5613549465) in [CodeWithCJ/SparkyFitness](https://github.com/CodeWithCJ/SparkyFitness)
+2. 🗣 Commented on [#2398](https://github.com/CodeWithCJ/SparkyFitness/issues/2398#issuecomment-5613473689) in [CodeWithCJ/SparkyFitness](https://github.com/CodeWithCJ/SparkyFitness)
+3. 🗣 Commented on [#107649](https://github.com/home-assistant/core/issues/107649#issuecomment-5510221789) in [home-assistant/core](https://github.com/home-assistant/core)
+4. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
 5. 💪 Opened PR [#1](https://github.com/DCODE-GROUP/dsg/pull/1) in [DCODE-GROUP/dsg](https://github.com/DCODE-GROUP/dsg)
 <!--END_SECTION:activity-->
 
