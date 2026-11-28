@@ -91,8 +91,8 @@ naming any repo.
 
 ### 🔭 Recent activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#2398](https://github.com/CodeWithCJ/SparkyFitness/issues/2398#issuecomment-5617850261) in [CodeWithCJ/SparkyFitness](https://github.com/CodeWithCJ/SparkyFitness)
-2. 🗣 Commented on [#2398](https://github.com/CodeWithCJ/SparkyFitness/issues/2398#issuecomment-5613549465) in [CodeWithCJ/SparkyFitness](https://github.com/CodeWithCJ/SparkyFitness)
+1. 💪 Opened PR [#2](https://github.com/odb1981/esp32-nut/pull/2) in [odb1981/esp32-nut](https://github.com/odb1981/esp32-nut)
+2. 💪 Opened PR [#1](https://github.com/odb1981/esp32-nut/pull/1) in [odb1981/esp32-nut](https://github.com/odb1981/esp32-nut)
 3. 🗣 Commented on [#2398](https://github.com/CodeWithCJ/SparkyFitness/issues/2398#issuecomment-5613473689) in [CodeWithCJ/SparkyFitness](https://github.com/CodeWithCJ/SparkyFitness)
 4. 🗣 Commented on [#107649](https://github.com/home-assistant/core/issues/107649#issuecomment-5510221789) in [home-assistant/core](https://github.com/home-assistant/core)
 5. ❗ Opened issue [#49](https://github.com/sillyfrog/Automate-Pulse-v2/issues/49) in [sillyfrog/Automate-Pulse-v2](https://github.com/sillyfrog/Automate-Pulse-v2)
